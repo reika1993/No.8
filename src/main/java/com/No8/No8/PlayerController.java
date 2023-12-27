@@ -14,7 +14,7 @@ public class PlayerController {
         this.playerMapper = playerMapper;
     }
 
-    @GetMapping("/players")
+    @GetMapping("/tigers")
     public List<Player> findAll() {
         return playerMapper.findAll();
     }
