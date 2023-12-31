@@ -19,16 +19,16 @@ REST APIのプロジェクト作成のため、[Spring Initializr](https://start
 ディレクトリ内のファイル構成は下記。
 
 ```
-.
-├── Dockerfile
-├── README.md
 ├── conf
-│   └── mysql
-│       └── my.cnf
+│  └── mysql
+│      └── my.cnf
+├── gradlew/wrapper
+├── sql
+│  └── 001-create-table-and-load-data.sql
+├── src
+├── Dockerfile
 ├── docker-compose.yml
-├── renovate.json
-└── sql
-    └── 001-create-table-and-load-data.sql
+└── build.gradle
 ```
 
 dockerの確認をする。
@@ -152,6 +152,15 @@ mysql> select * from players;
 9 rows in set (0.00 sec)
 ```
 
+ポストマンを起動して確認する。
+![スクリーンショット 2023-12-27 22.13.27.png](..%2F..%2F..%2F..%2F%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202023-12-27%2022.13.27.png)
+![スクリーンショット 2023-12-27 22.13.33.png](..%2F..%2F..%2F..%2F%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202023-12-27%2022.13.33.png)
+Status200 成功！
+
+次にクエリ文字列を指定して検索する。
+![スクリーンショット 2024-01-01 5.33.58.png](..%2F..%2F..%2F..%2F%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202024-01-01%205.33.58.png)
+Status200 成功！
+
 ログアウトする。
 
 ```mysql
@@ -173,4 +182,5 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 
 終了
+
 # No.8
